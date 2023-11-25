@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    container_name: article-summarize-bot
+    env_file:
+      - .env
+    volumes:
+      - .:$WORKING_DIR
+    working_dir: $WORKING_DIR
+    tty: true
+    ports:
+      - 8000:8000
